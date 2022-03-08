@@ -87,9 +87,6 @@ void LL<S>::insertfirst(const S &item) {
 }
 
 
-
-
-
 template<typename S>
 ostream& operator<<(ostream &os, const LL<S> &ll){
 
@@ -123,3 +120,4 @@ ostream& operator<<(ostream &os, const LL<S> &ll){
 //length
 //insertfirst
 //overload << operator to print list.
+//asdaasd

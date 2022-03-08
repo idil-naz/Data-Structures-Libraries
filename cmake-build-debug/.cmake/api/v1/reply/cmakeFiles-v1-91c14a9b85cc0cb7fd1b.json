@@ -757,8 +757,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "C:/Users/Naz/Desktop/Data Structures/cmake-build-debug",
-		"source" : "C:/Users/Naz/Desktop/Data Structures"
+		"build" : "D:/Git Repositories/Data Structures/cmake-build-debug",
+		"source" : "D:/Git Repositories/Data Structures"
 	},
 	"version" : 
 	{
