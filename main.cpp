@@ -2,6 +2,13 @@
 #include "LL.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+
+    LL<int> myList;
+
+
+
+
+    cout<<myList;
+
     return 0;
 }
