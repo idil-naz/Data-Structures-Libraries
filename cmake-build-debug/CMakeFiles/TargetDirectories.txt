@@ -1,0 +1,3 @@
+C:/Users/Naz/Desktop/Data Structures/cmake-build-debug/CMakeFiles/Data_Structures.dir
+C:/Users/Naz/Desktop/Data Structures/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Naz/Desktop/Data Structures/cmake-build-debug/CMakeFiles/rebuild_cache.dir
