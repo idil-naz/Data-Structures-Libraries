@@ -12,8 +12,6 @@ int main() {
      *          myList.insertLast(10);
      */
 
-
-
     cout<<myList;
 
     return 0;

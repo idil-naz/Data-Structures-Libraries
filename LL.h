@@ -3,6 +3,9 @@
 
 #endif //DATA_STRUCTURES_LL_H
 
+//Created by: İdil Naz Bakandı
+//Last modified: 3/12/2022
+
 #include<iostream>
 using namespace std;
 
