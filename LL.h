@@ -43,6 +43,10 @@ public:
     void insertAfter(const S &item, const S &placeitem);
     void insertBefore(const S &item, const S &placeitem);
 
+    void clearList();
+    void deleteFirst();
+    void deleteNode(const S &item);
+
     S front();
     S back();
 
@@ -190,9 +194,14 @@ void LL<S>::insertBefore(const S &item, const S &placeitem) {
             searchptr = searchptr->link;
             placeCounter++;
         }
+
+        if(searchptr == last && searchptr->info != placeitem){
+            cout<<"There is no such item."<<endl;
+            return;
+        }
     }
-    cout<<"searchptr: "<<searchptr->info<<endl;
-    ;
+
+
     if(searchptr == head){
         insertFirst(item);
         return;
@@ -202,10 +211,82 @@ void LL<S>::insertBefore(const S &item, const S &placeitem) {
         placeptr = placeptr->link;
     }
 
-    cout<<"placeptr: "<<placeptr->info<<endl;
     ptr->link = placeptr->link;
     placeptr->link = ptr;
 
+}
+
+template<typename S>
+void LL<S>::clearList(){
+
+    Node<S>* ptr = head;
+
+    while(head->link != nullptr){
+            ptr = ptr->link;
+            delete head;
+            head = ptr;
+            count--;
+    }
+
+    delete ptr;
+    count--;
+    head = nullptr;
+    last = nullptr;
+
+}
+
+template<typename S>
+void LL<S>::deleteFirst() {
+
+    Node<S>* ptr = head;
+
+    if(head == last){
+        delete ptr;
+        head = nullptr;
+        last = nullptr;
+        count--;
+        return;
+    }
+
+    head = head->link;
+    delete ptr;
+
+    count--;
+
+}
+
+template<typename S>
+void LL<S>::deleteNode(const S &item) {
+
+    Node<S> *ptr = head;
+    Node<S> *ptrDelete = head;
+
+    int placeCounter = 0;
+
+    while (ptrDelete != nullptr) {
+
+        if (ptrDelete->info == item) {
+            placeCounter++;
+            break;
+        }
+
+        else {
+            ptrDelete = ptrDelete->link;
+            placeCounter++;
+        }
+    }
+
+    for (int i = 1; i < placeCounter-1; i++) {
+        ptr = ptr->link;
+    }
+
+    if(ptrDelete == head){
+        deleteFirst();
+        return;
+    }
+
+    ptr->link = ptr->link->link;
+    delete ptrDelete;
 
 }
 
@@ -221,7 +302,12 @@ ostream& operator<<(ostream &os, LL<R> &ll){
         ptr=ll.head;
 
         while(ptr != nullptr){
-            os<<ptr->info<<", ";
+            if (ptr == ll.last){
+                os<<ptr->info<<" ";
+            }
+            else{
+                os<<ptr->info<<", ";
+            }
             ptr = ptr->link;
         }
     }
@@ -243,18 +329,7 @@ S LL<S>::back() {
 /*
 
  * deletenode
- * deletefirst
- * clearlist*/
 
 
-//search (returns a pointer of type Node)
-//isempty
-//length
-//insertfirst
-//overload << operator to print list.
+ */
 
-//* insertlast
-//* insertat
-// * insertafter
-//* insertbefore
-// front,back

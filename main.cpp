@@ -5,6 +5,12 @@ int main() {
 
     LL<int> myList;
 
+    /*
+     * Type myList. to view all available functions.
+     *
+     * example: myList.insertFirst(5);
+     *          myList.insertLast(10);
+     */
 
 
 
